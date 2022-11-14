@@ -1,0 +1,227 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content:  center;
+    background-color: rgba(0, 0, 0, 0.83);
+}
+.blurCont{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.83);
+    width: 85%;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width:80%;
+    
+}
+/* #########################  Cards and containers ##################### */
+.formContainer1 {
+    color: antiquewhite;
+    margin: 10rem auto;
+    
+    width: 400px;
+    height: 620px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all .3s;
+   }
+   
+.formContainer2 {
+   
+    padding-top: 1rem;
+    width: 400px;
+    height: 604px;
+    background-color: #242429;
+    border-radius:15px;
+    transition: all .2s;
+   }
+   
+.formContainer2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+   }
+   
+.formContainer1:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+   }
+
+ /* #########################  Title ##################### */
+.formTitle{
+    margin-top: 2rem;
+}
+
+   /* #########################  INPUTS and LABELS ##################### */
+
+.divContainer{
+    display: block;
+    
+   
+}
+.labelContainer1{
+    display: block;
+    /* margin-right: 17rem; */
+    font-size: 1rem;
+    text-align: center;
+}
+.labelContainer2{
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+.labelContainer3{
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+.labelContainer4{
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+.labelContainer5{
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+.inputDescriContainer{
+    margin-bottom: 10px;
+    height: 4.5rem;
+    width: 20rem;
+    font-size: 1rem;
+    padding: 3px;
+    padding-left: 7px;
+    border-radius: 7px;
+}
+.inputContainer{
+    margin-bottom: 10px;
+    height: 1.5rem;
+    width: 20rem;
+    font-size: 1rem;
+    padding: 3px;
+    padding-left: 7px;
+    border-radius: 7px;
+}
+ /* #########################  SELECT and DELETE VALUE (Genres & Platform) ##################### */
+.selectContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.inputGenres{
+    height: 1.6rem;
+    border-radius: 5px;
+    width: 8rem;
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.inputPlatform{
+    height: 1.6rem;
+    border-radius: 5px;
+    width: 8rem;
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+/* ######################### MSJ ERROR  ##################### */
+.msjInputError{
+    margin: 0px;
+    color: rgb(231, 63, 63);
+
+}
+/* #########################  BACK--CREATE -> button  ##################### */
+.formBackBtn{
+    height: 1.6rem;
+    width: 4rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 300ms;
+}
+.formBackBtn:hover{
+    transform: scale(1.1);
+}
+.formCreateBtn{
+    height: 1.6rem;
+    width: 4rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 300ms;
+}
+.formCreateBtn:hover{
+    transform: scale(1.1);
+}
+
+/* #########################  DELETE VALUE (Genres & Platform) ##################### */
+.GenContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-left: 12rem;
+    align-items: center;
+    width: 20rem;
+    order: -1;
+}
+.pGenres{
+    margin-top: 10px;
+}
+.deleteGenresContainer{
+    cursor: pointer;
+    color: antiquewhite;
+    width: 11rem;
+    height: 1.5rem;
+    background-color: #393939;
+    border-radius: 10px;
+    margin: 7px;
+    padding-bottom: 15px;
+    transition: all 300ms;
+    font-weight: 50px;
+    border-bottom: #00ff75 solid 6px;
+
+}
+.deleteGenresContainer:hover{
+    background-color: aliceblue;
+    color: #1f1f1f;
+    transform: scale(1.1);
+    font-weight: 200px;
+}
+.PlatContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-right: 12rem;
+    align-items: center;
+    width: 20rem;
+}
+.pPlatform{
+    margin-top: 10px;
+}
+.deletePlatformContainer{
+    order:1;
+    cursor: pointer;
+    color: antiquewhite;
+    width: 11rem;
+    height: 1.5rem;
+    margin: 7px;
+    background-color: #393939;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    transition: all 300ms;
+    font-weight: 50px;
+    border-bottom: #00ff75 solid 6px;
+}
+.deletePlatformContainer:hover{
+    background-color: aliceblue;
+    color: #1f1f1f;
+    transform: scale(1.1);
+    font-weight: 200px;
+}

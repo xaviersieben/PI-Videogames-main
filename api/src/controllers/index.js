@@ -48,20 +48,23 @@ const getDb = async () => {
     include: {
       model: Genre,
       attributes: ["name"],
-      // through: {
-      //   attributes: [],
-      // },
     },
   });
 
   // retorno los datos necesarios para los juegos de la DB
-  infoDb = infoDb.map(({ id, name, releaseDate, rating, platforms }) => ({
-    id,
-    name,
-    releaseDate,
-    rating,
-    platforms,
-  }));
+  infoDb = infoDb.map(
+    ({ createInDb, id, name,image, releaseDate, rating, platforms,genres }) => ({
+      createInDb,
+      id,
+      name,
+      releaseDate,
+      rating,
+      platforms,
+      image,
+      genres: genres.map((e) => e.name),
+    })
+  );
+  console.log(infoDb)
   return infoDb;
 };
 
@@ -112,7 +115,17 @@ exports.getVideogame = async (req, res) => {
       });
 
       videogameDb = videogameDb.map(
-        ({ id, name, released, rating, platforms, genres, image }) => ({
+        ({
+          createInDb,
+          id,
+          name,
+          released,
+          rating,
+          platforms,
+          genres,
+          image,
+        }) => ({
+          createInDb,
           id,
           name,
           released,
@@ -205,13 +218,22 @@ exports.getGenre = async (req, res) => {
 };
 
 exports.postVideogame = async (req, res) => {
-  const { id, name, description, releaseDate, rating, genres, platforms } =
-    req.body;
+  const {
+    id,
+    name,
+    image,
+    description,
+    releaseDate,
+    rating,
+    genres,
+    platforms,
+  } = req.body;
   try {
     let newVideogame = await Videogame.create({
       id,
       name,
       description,
+      image,
       releaseDate,
       rating,
       platforms,

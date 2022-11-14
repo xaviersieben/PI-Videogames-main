@@ -1,0 +1,58 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cardImg{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.nameContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    padding: 3px;
+    
+}
+.cardName {
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 30px; 
+}
+.genreContainer{
+    width: auto;
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin-top: 5px;
+   
+}
+.cardGenre{
+    color: aliceblue;
+    word-wrap: break-word;
+    font-size: 15px;
+    width: 210px;
+}
+
+.cardRating{
+    color: rgb(166, 3, 3);
+    border:solid rgb(166, 3, 3);
+    width: 50px;
+    margin: 0px;
+    border-radius: 15px;
+}
+
+.raitingContainer{
+    padding: 0px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+ 
+}
+.notFound .cdContainer{
+    color: aliceblue;
+    background-color: aliceblue;
+}

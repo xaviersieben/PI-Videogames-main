@@ -1,0 +1,18 @@
+.loading1{
+    border-radius: 10%;
+    box-shadow: 2px 2px 30px 10px rgb(26, 29, 25);
+    overflow: hidden;
+    height: 400px;
+    width: 600px;
+    background-position:center center;
+    margin-left: 150px;
+    
+    
+}
+.loading2{
+    border-radius: 10%;
+    height: 700px;
+    width: 800px;
+    margin: -150px -110px;
+    
+}
