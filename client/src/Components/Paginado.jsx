@@ -1,12 +1,7 @@
 import React from "react";
 import styles from "./Paginado.module.css";
 
-export default function Paginado({
-  videoGamesPage,
-  allVideoGames,
-  paginado,
-  page,
-}) {
+export default function Paginado({ videoGamesPage, allVideoGames, paginado }) {
   const pageNumbers = [];
 
   for (let i = 0; i < Math.ceil(allVideoGames / videoGamesPage); i++) {
@@ -22,7 +17,6 @@ export default function Paginado({
               <button
                 className={styles.paginadoBtn}
                 onClick={() => paginado(number)}
-                
               >
                 {number}
               </button>

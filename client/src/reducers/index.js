@@ -9,7 +9,6 @@ import {
   GET_DETAILS,
   RESET_DETAIL,
   LOW_RATING,
-  getVideoGame,
 } from "../actions/index.js";
 
 const initialState = {
@@ -47,9 +46,7 @@ export function reducer(state = initialState, { type, payload }) {
       };
 
     case FILTER_BY_CREATED:
-      console.log(payload)
       const allVideoGames2 = state.backUpGames;
-      console.log(state.backUpGames)
       const createdFilter =
         payload === "Created"
           ? allVideoGames2.filter((e) => e.createInDb)
@@ -60,9 +57,7 @@ export function reducer(state = initialState, { type, payload }) {
       };
 
     case ORDER_BY_NAME:
- 
       let sortGame =
-      
         payload === "asc"
           ? state.videogames.sort((a, b) => {
               if (a.name.toUpperCase() > b.name.toUpperCase()) {

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail, clearDetail } from "../actions";
+import { getDetail } from "../actions";
 import { useEffect } from "react";
 import styles from "./DetailVideo.module.css";
-// import img from "../Image/port5.jpg"
 
 export default function VideoGameDetail() {
   const dispatch = useDispatch();
@@ -12,7 +11,6 @@ export default function VideoGameDetail() {
 
   useEffect(() => {
     dispatch(getDetail(id));
-    //dispatch(clearDetail())
   }, [dispatch, id]);
 
   const videoGameDetail = useSelector((state) => state.detail);
@@ -42,7 +40,7 @@ export default function VideoGameDetail() {
             </p>
             <div className={styles.ratingDetail}>
               <strong>Rating: </strong>
-              <p  className={styles.ratingDetails}>{videoGameDetail.rating}</p>
+              <p className={styles.ratingDetails}>{videoGameDetail.rating}</p>
             </div>
             <div className={styles.detailPlatform}>
               <strong>Platfom: </strong>
@@ -65,9 +63,9 @@ export default function VideoGameDetail() {
               }
             </div>
 
-      <Link to="/home">
-        <button className={styles.backBtnDetail}>Back</button>
-      </Link>
+            <Link to="/home">
+              <button className={styles.backBtnDetail}>Back</button>
+            </Link>
           </div>
         </div>
       ) : (

@@ -16,7 +16,6 @@ import Paginado from "./Paginado";
 import GenreSelectOption from "./GenreSelectOption";
 import SearchBar from "./SearchBar";
 import styles from "./Home.module.css";
-// import imgLogo1 from "../Image/logo1.jpg"
 import Loading from "./Loading";
 
 export default function Home() {
@@ -24,11 +23,8 @@ export default function Home() {
   const allVideoGames = useSelector((state) => state.videogames);
   const allGenres = useSelector((state) => state.genres);
 
-  //const [orden, setOrden] = useState("");
-
-  //Seteo el paginado aqui y luego aplico la logica en el componente Paginado
   const [currentPage, setCurrentPage] = useState(1);
-  const [videoGamesPage, setVideoGamesPage] = useState(15);
+  const [videoGamesPage] = useState(15);
   const indexOfLastVideoGame = currentPage * videoGamesPage;
   const indexOfFirstVideoGame = indexOfLastVideoGame - videoGamesPage;
   const currentVideoGames = allVideoGames.slice(
@@ -58,17 +54,16 @@ export default function Home() {
   function handleFilterCreated(e) {
     e.preventDefault();
     dispatch(filterByCreated(e.target.value));
-    //setCurrentPage(1)
+    setCurrentPage(1);
   }
   function handleSort(e) {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
     setCurrentPage(1);
-    // setOrden(`Ordenado ${e.target.value}`);
   }
   function handleSortByRating(e) {
     dispatch(orderByRating(e.target.value));
-    // setOrden(`Ordenado ${e.target.value}`);
+
     setCurrentPage(1);
   }
   function handleRatinglow(e) {
@@ -82,11 +77,6 @@ export default function Home() {
       </div>
 
       <div className={styles.homeTitleAndSearch}>
-        {/* <div className={styles.homeImg1}>
-          <Link className={styles.titleLink} to="/">
-            <img alt="File Not Found" />
-          </Link>
-        </div> */}
         <div className={styles.homeTitle}>
           <Link className={styles.titleLink} to="/">
             <h1 className={styles.homeTitle1}>VideoGames</h1>
@@ -101,7 +91,6 @@ export default function Home() {
               videoGamesPage={videoGamesPage}
               allVideoGames={allVideoGames.length}
               paginado={paginado}
-              page={currentPage}
             />
           </div>
         </div>
@@ -111,37 +100,36 @@ export default function Home() {
         <div>
           <div className={styles.homeSideOptions}>
             <Link to="/videogames">
-              <button className={styles.homeOptionBtn}>Create VideoGame</button>
+              <button className={styles.homeOptionBtn}>Crear VideoGame</button>
             </Link>
             <button
               className={styles.homeOptionBtn}
               onClick={(e) => handleClick(e)}
             >
-              Reload VideoGame
+              Recargar VideoGame
             </button>
             <div>
               <button
                 className={styles.homeOptionBtn}
                 onClick={(e) => handleRatinglow(e)}
               >
-                {" "}
-                Filter All Low Rating
+                Filtrar bajo Rating
               </button>
             </div>
             <select
               className={styles.homeSelectBtn}
               onChange={(e) => handleSort(e)}
             >
-              <option value="asc">Sort: A - Z</option>
-              <option value="des">Sort: Z - A</option>
+              <option value="asc">Orden: A - Z</option>
+              <option value="des">Orden: Z - A</option>
             </select>
             <select
               className={styles.homeSelectBtn}
               onChange={(e) => handleFilterCreated(e)}
             >
-              <option value="Games">All Games</option>
+              <option value="Games">Games</option>
               <option value="api">Games Api</option>
-              <option value="Created">Created</option>
+              <option value="Created">Games Creados</option>
             </select>
             <select
               className={styles.homeSelectBtn}
@@ -156,7 +144,7 @@ export default function Home() {
               className={styles.homeSelectBtn}
               onChange={(e) => handleFilterGenres(e)}
             >
-              <option value="Genres">All Genres</option>
+              <option value="Genres">Generos</option>
               <GenreSelectOption allGenres={allGenres} />
             </select>
           </div>
